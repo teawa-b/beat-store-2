@@ -1,65 +1,31 @@
 import { FaYoutube } from 'react-icons/fa';
-import BirdieLogo from '../../src/Images/1LOGO-CROP-NOSTARS.png';
+import { TrooSigil, TrooWordmark } from './TrooBrand';
 
 const YoutubeSection = () => {
   return (
-    <section className="bg-gradient-to-r from-zinc-950/0 via-zinc-900/0 to-zinc-950/0 text-white px-6">
-      <div className="max-w-5xl mx-auto text-center">
-        <div className="flex flex-col items-center space-y-6">
-          <FaYoutube className="text-red-600 text-6xl" />
-          <h2 className="text-foreground flex items-center gap-2 text-3xl font-extrabold tracking-tight sm:text-4xl">
-            <picture className="pointer-events-none">
-              <source
-                srcSet="https://fonts.gstatic.com/s/e/notoemoji/latest/1f525/512.webp"
-                type="image/webp"
-              />
-              <img
-                src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f525/512.gif"
-                alt="🔥"
-                width="32"
-                height="32"
-                className="max-sm:hidden"
-              />
-            </picture>{' '}
-            Subscribe to Birdie Bands
+    <section className="px-6 text-white">
+      <div className="mx-auto max-w-5xl overflow-hidden rounded-[2rem] border border-red-200/15 bg-[#120305]/78 p-8 shadow-[0_26px_90px_rgba(0,0,0,0.32)] sm:p-12">
+        <div className="flex flex-col items-center space-y-6 text-center">
+          <div className="flex items-center gap-4">
+            <FaYoutube className="text-red-600 text-6xl drop-shadow-[0_0_20px_rgba(229,9,24,0.5)]" />
+            <TrooSigil className="!w-16 !min-w-16" />
+          </div>
+          <h2 className="flex flex-wrap items-center justify-center gap-3 text-3xl font-extrabold tracking-tight text-foreground sm:text-4xl">
+            Subscribe to <TrooWordmark className="text-5xl" compact />
           </h2>
-          <div>
-            <img
-              className="w-32 h-32 rounded-full pointer-events-none"
-              src={BirdieLogo}
-              alt="bidie logo"
-            />
+          <div className="text-lg font-medium text-red-50/76">
+            Join <span className="font-semibold text-white">115,000+</span> subscribers
           </div>
-          {/* Subscriber Count */}
-          <div className="!text-black dark:!text-gray-300 text-lg font-medium">
-            🎧 Join{' '}
-            <span className="dark:!text-white font-semibold">115,000+</span>{' '}
-            subscribers
-          </div>
-          <p className="text-lg !text-black dark:!text-gray-100 max-w-xl">
-            Get exclusive beat drops, studio sessions, and behind-the-scenes
-            vibes straight from the channel.
+          <p className="max-w-xl text-lg text-red-50/82">
+            Catch new beat drops, visualizers, studio clips, and behind-the-scenes sessions straight from the Troo! channel.
           </p>
           <a
-            href="https://www.youtube.com/@birdiebands?sub_confirmation=1" // Replace with your actual channel link
-            // href="https://www.youtube.com/@BIRDIEBANDS" // Replace with your actual channel link
+            href="https://www.youtube.com/@Troo?sub_confirmation=1"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center justify-center gap-2 rounded-md !text-white font-semibold py-3 px-6 hover:!bg-white hover:!text-foreground  dark:hover:bg-foreground dark:hover:!text-background  !transition-all !duration-600 !bg-zinc-900"
+            className="flex items-center justify-center gap-2 rounded-md !bg-red-700 px-6 py-3 font-semibold !text-white !transition-all !duration-500 hover:!bg-red-500 hover:!text-white"
           >
-            {/* 🚀 Visit & Subscribe */}
-            <picture className="pointer-events-none">
-              <source
-                srcSet="https://fonts.gstatic.com/s/e/notoemoji/latest/1f680/512.webp"
-                type="image/webp"
-              />
-              <img
-                src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f680/512.gif"
-                alt="🚀"
-                width="32"
-                height="32"
-              />
-            </picture>
+            <FaYoutube />
             Visit & Subscribe
           </a>
         </div>

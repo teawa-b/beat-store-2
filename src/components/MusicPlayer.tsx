@@ -50,8 +50,8 @@ const MusicPlayer = () => {
   // Update the media session
   useEffect(() => {
     let artistName = currentTrack?.artist;
-    if (artistName === 'Birdie Bands') {
-      artistName = 'Birdie Bands Sample Pack';
+    if (artistName === 'Troo') {
+      artistName = 'Troo! Sample Pack';
     } else {
       artistName = `${artistName} Type Beat`;
     }
@@ -62,7 +62,7 @@ const MusicPlayer = () => {
       navigator.mediaSession.metadata = new MediaMetadata({
         title: currentTrack.title || 'Unknown Track',
         artist: `${artistName || 'Unknown Artist'}`,
-        album: 'Birdie Bands',
+        album: 'Troo!',
         artwork: [
           {
             src:
@@ -248,7 +248,7 @@ const MusicPlayer = () => {
 
   if (!currentTrack) return null;
   return (
-    <div className="fixed bottom-0 left-0 right-0 bg-white dark:bg-black border-t dark:border-gray-800 px-4 py-3 [@media(max-height:745px)]:py-0 z-[500] w-full">
+    <div className="fixed bottom-0 left-0 right-0 bg-white/95 dark:bg-[#090102]/94 border-t border-red-200/15 px-4 py-3 [@media(max-height:745px)]:py-0 z-[500] w-full backdrop-blur-xl">
       <div className="xl:w-6xl mx-auto z-50">
         <div className="flex items-center justify-between text-start ">
           {/* Current Track Info */}
@@ -357,7 +357,7 @@ const MusicPlayer = () => {
           {isTrackInCart(currentTrack.id) ? (
             <button
               onClick={() => handleEditLicenseClick(currentTrack)}
-              className="min-sm:min-w-28 !bg-green-600 hover:!bg-green-800 !transition-colors duration-300 text-foreground px-4 py-2 rounded font-medium text-sm"
+              className="min-sm:min-w-28 !bg-red-700 hover:!bg-red-800 !transition-colors duration-300 text-foreground px-4 py-2 rounded font-medium text-sm"
             >
               <ShoppingCart className="w-4 h-4 min-md:hidden max-md:mx-auto" />
               <span className="hidden md:block">IN CART</span>
@@ -365,7 +365,7 @@ const MusicPlayer = () => {
           ) : (
             <button
               onClick={() => handleBuyClick(currentTrack)}
-              className=" min-sm:min-w-28 cursor-pointer !bg-foreground  text-background px-4 py-2 rounded font-medium text-sm hover:!bg-white hover:!text-black dark:hover:!bg-gray-300 !transition-colors duration-300 flex items-center space-x-1"
+              className="min-sm:min-w-28 cursor-pointer !bg-red-600 text-white px-4 py-2 rounded font-medium text-sm hover:!bg-red-500 hover:!text-white !transition-colors duration-300 flex items-center space-x-1"
             >
               <ShoppingCart className="max-sm:w-2 max-sm:scale-200 w-4 h-4" />
               <span className="hidden sm:block">

@@ -16,12 +16,12 @@ const Artists = ({ size }: { size: string }) => {
         initial={{ y: 100, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.3, ease: [0, 0.71, 0.2, 1.01] }}
-        className="flex flex-col gap-12"
+        className="flex flex-col gap-12 px-4"
       >
         <div>
-          <h2 className={`font-bold ${size}`}>Artist Type Beats</h2>
-          <p className="text-sm text-gray-500 mt-1">
-            Tap an image to explore beats inspired by your favorite artists.
+          <h2 className={`font-black ${size}`}>Troo! Type Beat Lanes</h2>
+          <p className="text-sm text-red-50/55 mt-1">
+            Tap a lane to jump into beats built for that artist pocket.
           </p>
         </div>
         <div className="flex gap-24 flex-wrap justify-center z-10">
@@ -42,7 +42,7 @@ const Artists = ({ size }: { size: string }) => {
               showTooltip={true}
               displayOverlayContent={true}
               overlayContent={
-                <p className="bg-background/50 m-6 p-3 rounded-2xl font-bold">
+                <p className="bg-[#120305]/75 border border-red-200/15 m-6 p-3 rounded-lg font-bold">
                   Key Glock Type Beats
                 </p>
               }
@@ -64,7 +64,7 @@ const Artists = ({ size }: { size: string }) => {
               showTooltip={true}
               displayOverlayContent={true}
               overlayContent={
-                <p className="bg-background/50 m-6 p-3 rounded-2xl font-bold">
+                <p className="bg-[#120305]/75 border border-red-200/15 m-6 p-3 rounded-lg font-bold">
                   Larry June Type Beats
                 </p>
               }
@@ -87,7 +87,7 @@ const Artists = ({ size }: { size: string }) => {
               showTooltip={true}
               displayOverlayContent={true}
               overlayContent={
-                <p className="bg-background/50 m-6 p-3 rounded-2xl font-bold">
+                <p className="bg-[#120305]/75 border border-red-200/15 m-6 p-3 rounded-lg font-bold">
                   Gunna Type Beats
                 </p>
               }

@@ -14,7 +14,6 @@ import {
   Share2,
   Pause,
 } from 'lucide-react';
-import BirdieLogo1 from '../Images/cropped.png';
 import { NavLink, useNavigate } from 'react-router';
 import { usePlayer } from '@/contexts/PlayerContext';
 import StudioVideo from '/Videos/music-studio.mp4';
@@ -37,6 +36,7 @@ import {
 import FadeContent from './ui/ReactBits/FadeContent';
 import SplitText from './ui/ReactBits/SplitText';
 import MailerLitePopUpDownload from './MailerLitePopUpDownload';
+import { TrooSigil, TrooWordmark } from './TrooBrand';
 declare global {
   interface Window {
     dataLayer: any[];
@@ -68,13 +68,13 @@ const TrackListing = ({ limitTrackCount }: { limitTrackCount?: number }) => {
   const [pendingDownload, setPendingDownload] = useState<Track | null>(null);
 
   const placeholders = [
-    'Larry June Type Beat?',
-    'Payroll Giovanni Type Beat?',
-    'Playboi Carti Type Beat?',
+    'Dark melodic trap?',
+    'Red-room Detroit bounce?',
+    'Gunna Type Beat?',
     'Key Glock Type Beat?',
     'Drake Type Beat?',
-    'Gunna Type Beat?',
-    'G-Funk?',
+    'Hard YouTube beat?',
+    'G-Funk with weight?',
   ];
 
   // Handle pagination and search
@@ -139,7 +139,7 @@ const TrackListing = ({ limitTrackCount }: { limitTrackCount?: number }) => {
 
       const link = document.createElement('a');
       link.href = downloadUrl;
-      link.download = `${track.artist} Type Beat - ${track.title} [Prod. Birdie Bands].mp3`;
+      link.download = `${track.artist} Type Beat - ${track.title} [Prod. Troo].mp3`;
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
@@ -201,7 +201,7 @@ const TrackListing = ({ limitTrackCount }: { limitTrackCount?: number }) => {
   const handleShareClick = (track: Track) => {
     const shareUrl = `${window.location.origin}/beat?beatId=${track.id}`; // Use _id for the URL
 
-    const shareText = `Check out this beat: "${track.title}" by ${track.artist} on Birdie Bands!`;
+    const shareText = `Check out this beat: "${track.title}" by ${track.artist} on Troo!`;
     if (navigator.share) {
       navigator
         .share({
@@ -393,7 +393,7 @@ const TrackListing = ({ limitTrackCount }: { limitTrackCount?: number }) => {
             >
               <img
                 className="w-full h-full object-cover"
-                src={track.s3_image_url ? track.s3_image_url : BirdieLogo1}
+                src={track.s3_image_url ? track.s3_image_url : '/troo-og.svg'}
                 alt={track.title}
                 loading="lazy"
               />
@@ -420,7 +420,7 @@ const TrackListing = ({ limitTrackCount }: { limitTrackCount?: number }) => {
             </button>
             <button
               onClick={() => handleCardClick(track)}
-              className="min-w-0 !p-0 !m-0 text-start text-foreground hover:!text-green-400 !duration-200 !transition-colors !border-none !outline-none hover:!outline-none hover:!border-none !bg-transparent hover:!bg-transparent"
+              className="min-w-0 !p-0 !m-0 text-start text-foreground hover:!text-red-300 !duration-200 !transition-colors !border-none !outline-none hover:!outline-none hover:!border-none !bg-transparent hover:!bg-transparent"
             >
               <div className={`font-medium truncate `}>{track.title}</div>
               <div className=" text-sm truncate font-medium">
@@ -482,7 +482,7 @@ const TrackListing = ({ limitTrackCount }: { limitTrackCount?: number }) => {
             {isTrackInCart(track.id) ? (
               <button
                 onClick={() => handleEditLicenseClick(track)}
-                className="min-sm:min-w-28  !bg-green-600 hover:!bg-green-800 text-nowrap !transition-colors !duration-300 text-foreground px-4 py-2 rounded font-medium text-sm  "
+                className="min-sm:min-w-28 !bg-red-700 hover:!bg-red-800 text-nowrap !transition-colors !duration-300 text-foreground px-4 py-2 rounded font-medium text-sm shadow-[0_0_22px_rgba(229,9,24,0.22)]"
               >
                 <ShoppingCart className="w-4 h-4 min-sm:hidden" />
                 <span className="hidden sm:block">IN CART</span>
@@ -490,7 +490,7 @@ const TrackListing = ({ limitTrackCount }: { limitTrackCount?: number }) => {
             ) : (
               <button
                 onClick={() => handleBuyClick(track)}
-                className="min-sm:min-w-28 cursor-pointer !bg-foreground  text-background px-4 py-2 rounded font-medium text-sm hover:!bg-white hover:!text-black dark:hover:!bg-gray-300 !transition-colors duration-300 flex items-center space-x-1"
+                className="min-sm:min-w-28 cursor-pointer !bg-red-600 text-white px-4 py-2 rounded font-medium text-sm hover:!bg-red-500 hover:!text-white !transition-colors duration-300 flex items-center space-x-1 shadow-[0_0_20px_rgba(229,9,24,0.28)]"
               >
                 <ShoppingCart className="w-4 h-4" />
                 <span className="hidden sm:block">
@@ -547,34 +547,55 @@ const TrackListing = ({ limitTrackCount }: { limitTrackCount?: number }) => {
       {/* SEO Meta Tags */}
 
       <div
-        className={` bg-black py-16 flex flex-col justify-center items-center px-4 relative overflow-hidden`}
+        className="min-h-[82vh] bg-[#090102] py-16 lg:py-24 flex flex-col justify-center items-center px-4 relative overflow-hidden border-b border-red-200/10"
       >
         <video
           autoPlay
           loop
           muted
-          className="hidden md:block !pointer-events-none absolute h-screen lg:h-auto scale-200 md:scale-140 z-0 opacity-25 dark:opacity-10"
+          className="hidden md:block !pointer-events-none absolute h-screen lg:h-auto scale-200 md:scale-140 z-0 opacity-[0.08]"
           src={StudioVideo}
         ></video>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(229,9,24,0.32),transparent_28%),radial-gradient(circle_at_80%_20%,rgba(255,93,46,0.14),transparent_24%),linear-gradient(180deg,rgba(0,0,0,0.1),rgba(0,0,0,0.78))]" />
+        <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-[#090102] to-transparent" />
         <motion.div
           initial={{ y: -100, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 1.0, ease: 'easeOut', delay: 0.3 }}
+          className="relative z-[5] grid w-full max-w-7xl items-center gap-10 lg:grid-cols-[1.05fr_0.95fr]"
         >
-          <img
-            className="max-sm:w-[12rem] w-xs mb-5 sm:mb-10 z-[50] relative !pointer-events-none [@media(max-height:745px)]:max-w-24"
-            src={BirdieLogo1}
-            alt="Birdie Logo"
-            loading="lazy"
-          />
+          <div className="text-left max-lg:text-center">
+            <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-red-200/15 bg-white/5 px-4 py-2 text-xs font-bold uppercase tracking-[0.28em] text-red-100">
+              <TrooSigil className="!w-7 !min-w-7" />
+              Youtube beat drops
+            </div>
+            <h1 className="text-[4.5rem] leading-none sm:text-[7rem] lg:text-[10rem] [@media(max-height:745px)]:text-6xl">
+              <TrooWordmark />
+            </h1>
+            <p className="mx-auto mt-5 max-w-2xl text-base font-semibold text-red-50/82 sm:text-xl lg:mx-0">
+              Red-lit type beats with hard drums, cinematic melodies, and instant licenses for artists who need records ready tonight.
+            </p>
+            <div className="mt-7 flex flex-wrap gap-3 max-lg:justify-center">
+              <span className="rounded-full border border-red-200/15 bg-red-500/10 px-4 py-2 text-sm font-bold text-red-100">Trap</span>
+              <span className="rounded-full border border-red-200/15 bg-red-500/10 px-4 py-2 text-sm font-bold text-red-100">Detroit</span>
+              <span className="rounded-full border border-red-200/15 bg-red-500/10 px-4 py-2 text-sm font-bold text-red-100">Melodic</span>
+              <span className="rounded-full border border-red-200/15 bg-red-500/10 px-4 py-2 text-sm font-bold text-red-100">West Coast</span>
+            </div>
+          </div>
+          <div className="troo-hero-art mx-auto aspect-square w-full max-w-[30rem] rounded-[2rem]">
+            <div className="absolute bottom-5 left-5 right-5 z-[2] flex items-center justify-between border-t border-white/15 pt-4 text-left">
+              <span className="text-xs font-bold uppercase tracking-[0.28em] text-red-100/80">Troo! archive</span>
+              <span className="text-sm font-black text-white">2026</span>
+            </div>
+          </div>
         </motion.div>
-        <div className="w-full z-2">
+        <div className="w-full z-[6] mt-12 max-w-4xl">
           {/* <p className="mb-10 sm:mb-2 font-medium text-sm text-center sm:text-lg text-white ">
             Search Beats Here
           </p> */}
           <SplitText
-            text="Search Beats Here"
-            className="mb-10 sm:mb-2 font-medium text-sm text-center sm:text-lg text-white [@media(max-height:745px)]:text-xs"
+            text="Search the Troo! catalog"
+            className="mb-10 sm:mb-2 font-bold text-sm text-center sm:text-lg text-red-50 [@media(max-height:745px)]:text-xs"
             delay={100}
             duration={0.6}
             ease="power3.out"
@@ -601,7 +622,7 @@ const TrackListing = ({ limitTrackCount }: { limitTrackCount?: number }) => {
       <div className="max-w-7xl mx-auto px-4 py-8 z-5">
         {/* Header */}
         <div
-          className={`w-full min-w-full grid grid-cols-10 gap-4 dark:text-gray-400 text-sm font-medium border-b border-gray-800 pb-3 mb-4`}
+        className="w-full min-w-full grid grid-cols-10 gap-4 dark:text-red-100/55 text-sm font-medium border-b border-red-200/15 pb-3 mb-4"
         >
           <div className="col-span-5 md:col-span-4">Title</div>
           <div className="hidden md:block md:col-span-1">BPM</div>
@@ -669,16 +690,14 @@ const TrackListing = ({ limitTrackCount }: { limitTrackCount?: number }) => {
       {limitTrackCount ? (
         <NavLink to="/beats" className="z-50">
           <button
-            className={`${
-              !isBeatsLoaded && 'hidden'
-            } w-fit !text-white hover:!bg-white hover:!text-black  !transition-all !duration-600 !bg-zinc-900`}
+            className={`${!isBeatsLoaded && 'hidden'} w-fit !text-white hover:!bg-red-500 hover:!text-white !transition-all !duration-600 !bg-red-700 shadow-[0_0_28px_rgba(229,9,24,0.26)]`}
           >
             Browse All Beats
           </button>
         </NavLink>
       ) : (
         <NavLink to="/" className="z-50">
-          <button className="w-fit !text-white hover:!bg-white hover:!text-black  !transition-all !duration-600 !bg-zinc-900">
+          <button className="w-fit !text-white hover:!bg-red-500 hover:!text-white !transition-all !duration-600 !bg-red-700 shadow-[0_0_28px_rgba(229,9,24,0.26)]">
             Back To Home
           </button>
         </NavLink>

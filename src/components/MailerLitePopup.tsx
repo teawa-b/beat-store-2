@@ -85,8 +85,8 @@ const MailerLitePopUp = () => {
     <Dialog open={isOpen} onOpenChange={setIsOpen}>
       <DialogContent
         className={`max-w-[90vw] sm:max-w-[525px] px-4 sm:px-6 py-6 ${
-          theme === 'dark' ? 'bg-zinc-900 text-white' : 'bg-white text-gray-900'
-        } border-0 shadow-lg rounded-lg`}
+          theme === 'dark' ? 'bg-[#120305] text-white' : 'bg-white text-gray-900'
+        } border border-red-200/15 shadow-[0_24px_80px_rgba(0,0,0,0.45)] rounded-lg`}
       >
         <DialogHeader>
           <DialogTitle
@@ -121,7 +121,7 @@ const MailerLitePopUp = () => {
               theme === 'dark' ? 'text-gray-300 ' : 'text-gray-600 '
             }`}
           >
-            Get Exclusive Access to Birdie Bands' Latest Releases
+            Get Exclusive Access to Troo!' Latest Releases
             <br />
             Don’t miss out
           </DialogDescription>
@@ -143,7 +143,7 @@ const MailerLitePopUp = () => {
               theme === 'dark'
                 ? 'bg-zinc-700  border-gray-600  text-white '
                 : 'bg-white  border-gray-300  text-gray-900 '
-            } focus:outline-none  focus:ring-2  focus:ring-blue-500 `}
+            } focus:outline-none  focus:ring-2  focus:ring-red-500 `}
           />
           <Input
             type="email"
@@ -155,7 +155,7 @@ const MailerLitePopUp = () => {
               theme === 'dark'
                 ? 'bg-zinc-700  border-gray-600  text-white '
                 : 'bg-white  border-gray-300  text-gray-900 '
-            } focus:outline-none  focus:ring-2  focus:ring-blue-500 `}
+            } focus:outline-none  focus:ring-2  focus:ring-red-500 `}
           />
           <div className="flex items-center justify-center gap-2">
             <input
@@ -165,7 +165,7 @@ const MailerLitePopUp = () => {
               onChange={(e) => setAgreed(e.target.checked)}
               required
               className={
-                theme === 'dark' ? 'accent-blue-500 ' : 'accent-blue-600 '
+                theme === 'dark' ? 'accent-red-500 ' : 'accent-red-600 '
               }
             />
             <label
@@ -174,7 +174,7 @@ const MailerLitePopUp = () => {
                 theme === 'dark' ? 'text-gray-300 ' : 'text-gray-600 '
               }`}
             >
-              I agree to receive newsletters and updates from Birdie Bands
+              I agree to receive newsletters and updates from Troo!
             </label>
           </div>
           <label

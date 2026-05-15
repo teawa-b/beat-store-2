@@ -139,7 +139,7 @@ export const HoverEffect = ({
               <AnimatePresence>
                 {hoveredIndex === idx && (
                   <motion.span
-                    className="absolute inset-0 h-full w-full bg-neutral-200 dark:bg-white/5 block rounded-3xl"
+                    className="absolute inset-0 h-full w-full bg-red-500/10 block rounded-xl"
                     layoutId="hoverBackground"
                     initial={{ opacity: 0 }}
                     animate={{
@@ -153,7 +153,7 @@ export const HoverEffect = ({
                   />
                 )}
               </AnimatePresence>
-              <Card className="bg-background border-black/25 dark:bg-transparent">
+              <Card className="bg-background/70 border-red-200/15 dark:bg-[#120305]/55">
                 <div className="flex flex-col justify-between min-h-96 md:min-h-[500px] h-full">
                   <div className="flex flex-col gap-3">
                     <CardTitle className="text-foreground">
@@ -178,7 +178,7 @@ export const HoverEffect = ({
                     ))}
                   </ul>
                   <button
-                    className=" dark:hover:!bg-white dark:hover:!text-background !transition-all !duration-600 hover:!bg-background hover:!text-foreground !text-background dark:!text-foreground !bg-zinc-900"
+                    className="!transition-all !duration-600 hover:!bg-red-500 hover:!text-white !text-white !bg-red-700"
                     // onClick={() => handleOpen(size, idx)}
                     onClick={() => handleDownloadClick(item.id)}
                   >
@@ -258,7 +258,7 @@ export const Card = ({
   return (
     <div
       className={cn(
-        'rounded-2xl h-full w-full p-4 overflow-hidden bg-black/50 border border-transparent dark:border-white/[0.2] group-hover:border-slate-700 relative z-20',
+        'rounded-lg h-full w-full p-4 overflow-hidden bg-black/50 border border-transparent dark:border-red-100/[0.16] group-hover:border-red-300/40 relative z-20',
         className
       )}
     >

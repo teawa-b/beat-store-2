@@ -1,85 +1,55 @@
-import BirdieLogo from '/src/Images/logo.png';
 import { FaCcVisa } from 'react-icons/fa';
 import { FaCcMastercard } from 'react-icons/fa';
 import { FaCcPaypal } from 'react-icons/fa';
 import { FaCcStripe } from 'react-icons/fa';
 import { NavLink } from 'react-router';
+import { TrooBrandLockup } from './TrooBrand';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
   return (
     <div className="mb-32 z-40 py-10 relative">
-      <footer className=" rounded-lg m-4 relative">
-        <div className="max-w-6xl  mx-auto p-4 md:py-8">
+      <footer className="m-4 relative border-t border-red-200/15">
+        <div className="max-w-6xl mx-auto p-4 md:py-8">
           <div className="sm:flex sm:items-center sm:justify-between">
             <NavLink
-              to={'/'}
+              to="/"
               onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
               className="flex items-center mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse"
             >
-              <img
-                src={BirdieLogo}
-                className="h-8 translate-y-1"
-                alt="Birdie Logo"
-              />
+              <TrooBrandLockup className="text-3xl" />
             </NavLink>
-            <ul className="flex flex-wrap items-center mb-6 text-sm font-medium  max-sm:justify-center sm:mb-0">
+            <ul className="flex flex-wrap items-center mb-6 text-sm font-medium max-sm:justify-center sm:mb-0">
               <li>
-                <NavLink
-                  to={'/refund-policy'}
-                  className="!text-foreground hover:!underline !transition-all !duration-300 me-4 md:me-6"
-                >
+                <NavLink to="/refund-policy" className="!text-foreground hover:!underline !transition-all !duration-300 me-4 md:me-6">
                   Refund Policy
                 </NavLink>
               </li>
               <li>
-                <NavLink
-                  to={'/privacy-policy'}
-                  className="!text-foreground hover:!underline !transition-all !duration-300 me-4 md:me-6"
-                >
+                <NavLink to="/privacy-policy" className="!text-foreground hover:!underline !transition-all !duration-300 me-4 md:me-6">
                   Privacy Policy
                 </NavLink>
               </li>
               <li>
-                <NavLink
-                  to={'/terms-of-service'}
-                  className="!text-foreground hover:!underline !transition-all !duration-300 me-4 md:me-6"
-                >
+                <NavLink to="/terms-of-service" className="!text-foreground hover:!underline !transition-all !duration-300 me-4 md:me-6">
                   Terms of Use
                 </NavLink>
               </li>
               <li>
-                <NavLink
-                  to={'/licenses'}
-                  className="!text-foreground hover:!underline !transition-all !duration-300 me-4 md:me-6"
-                >
+                <NavLink to="/licenses" className="!text-foreground hover:!underline !transition-all !duration-300 me-4 md:me-6">
                   Licensing
                 </NavLink>
               </li>
               <li>
-                <NavLink
-                  to={'/faqs'}
-                  className="!text-foreground hover:!underline !transition-all !duration-300 me-4 md:me-6"
-                >
+                <NavLink to="/faqs" className="!text-foreground hover:!underline !transition-all !duration-300 me-4 md:me-6">
                   FAQS
                 </NavLink>
               </li>
               <li>
-                <NavLink
-                  to={'/newsletter'}
-                  className="!text-foreground hover:!underline !transition-all !duration-300 me-4 md:me-6"
-                >
+                <NavLink to="/newsletter" className="!text-foreground hover:!underline !transition-all !duration-300 me-4 md:me-6">
                   Newsletter
                 </NavLink>
               </li>
-              {/* <li>
-                <NavLink
-                  to={'/contact'}
-                  className="!text-foreground hover:!underline !transition-all !duration-300"
-                >
-                  Contact
-                </NavLink>
-              </li> */}
             </ul>
           </div>
           <div className="min-[300px]:flex min-[300px]:justify-center min-[300px]:items-center sm:flex sm:items-center sm:justify-end">
@@ -96,27 +66,20 @@ const Footer = () => {
               <li>
                 <FaCcStripe size={30} />
               </li>
-              {/* <li>
-                <SiCoinbase size={50} />
-              </li> */}
             </ul>
           </div>
-          <hr className="my-6 border-foreground sm:mx-auto dark:border-foreground/30 lg:my-8" />
+          <hr className="my-6 border-red-200/15 sm:mx-auto lg:my-8" />
           <span className="block text-sm text-gray-500 sm:text-center dark:text-gray-400">
-            © {currentYear}{' '}
+            &copy; {currentYear}{' '}
             <button
-              // on click scroll to top
               onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
               className="!text-foreground hover:underline !p-0 !m-0 !bg-transparent hover:!bg-transparent !transition-all !duration-300"
             >
-              Birdie Bands™
+              Troo!&trade;
             </button>
             . All Rights Reserved.
           </span>
         </div>
-        {/* <button className="sticky bottom-20 translate-x-96 ">
-          <MoveUp />
-        </button> */}
       </footer>
     </div>
   );

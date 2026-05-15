@@ -7,14 +7,12 @@ import { NavLink, useNavigate } from 'react-router';
 import { useAuth } from '@/contexts/AuthContext';
 import { Avatar, AvatarFallback, AvatarImage } from './ui/avatar'; // Shadcn Avatar component
 // import GoogleTranslate from './GoogleTranslate';
-import BirdieLogo from '../../src/Images/logo.png';
-import BirdieLogo1 from '../../src/Images/1LOGO-CROP-NOSTARS.png';
-import BirdieAvatarLogo from '../../src/Images/cropped.png';
 import { ThemeToggle } from './ThemeToggle';
 import CartModal from './cart-modal';
 import { useCart } from '@/contexts/cart-context';
 import { Sheet, SheetContent, SheetTrigger } from './ui/sheet';
 import { useTheme } from '@/contexts/theme-provider'; // Adjust the import path to your ThemeProvider
+import { TrooBrandLockup, TrooSigil } from './TrooBrand';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -29,11 +27,11 @@ const Navbar = () => {
   const { theme } = useTheme();
   const navigate = useNavigate();
   // Use the auth context here
-  const { isAuthenticated, user, logout } = useAuth();
+  const { isAuthenticated, logout } = useAuth();
 
   return (
     <>
-      <nav className="!sticky !top-0 z-[500] border-b border-foreground/30  backdrop-blur-sm bg-background dark:bg-black/70">
+      <nav className="!sticky !top-0 z-[500] border-b border-red-200/15 backdrop-blur-xl bg-background/85 dark:bg-[#090102]/82">
         <div className="max-w-xl mx-auto">
           <Marquee
             gradient={true}
@@ -41,11 +39,11 @@ const Navbar = () => {
             gradientWidth={50}
             speed={35}
             // gradientColor="#0a0a0a"
-            gradientColor={theme === 'light' ? '#ffffff' : '#000000'}
-            className="!bg-transparent font-medium bg-gradient-to-l-"
+            gradientColor={theme === 'light' ? '#fff0df' : '#090102'}
+            className="!bg-transparent h-8 font-semibold tracking-wide"
           >
-            <button className="min-w-3xl !flex items-center justify-center   !bg-transparent hover:!bg-transparent  !p-0 hover:!p-0 !m-0 hover:!m-0">
-              25% OFF Code: BIRDIE25{' '}
+            <button className="min-w-3xl !min-h-8 !flex items-center justify-center !bg-transparent hover:!bg-transparent !p-0 hover:!p-0 !m-0 hover:!m-0">
+              25% OFF Code: TROO25{' '}
               <picture className="pointer-events-none">
                 <source
                   srcSet="https://fonts.gstatic.com/s/e/notoemoji/latest/1f525/512.webp"
@@ -60,8 +58,8 @@ const Navbar = () => {
                 />
               </picture>
             </button>
-            <button className="min-w-2xl !flex items-center justify-center  !bg-transparent hover:!bg-transparent  !p-0 hover:!p-0 !m-0 hover:!m-0">
-              Buy 1 Get 1 Free On All Leases. Excludes Exclusive Licenses.{' '}
+            <button className="min-w-2xl !min-h-8 !flex items-center justify-center !bg-transparent hover:!bg-transparent !p-0 hover:!p-0 !m-0 hover:!m-0">
+              Red-room drops, hard drums, melodic type beats. Buy 1 Get 1 Free On All Leases.{' '}
               <picture className="pointer-events-none">
                 <source
                   srcSet="https://fonts.gstatic.com/s/e/notoemoji/latest/1f525/512.webp"
@@ -82,23 +80,7 @@ const Navbar = () => {
         <div className="max-w-7xl mx-auto flex items-center justify-between px-4 py-4">
           {/* Logo */}
           <NavLink to="/" className="flex items-center">
-            {/* <Image
-              src={BirdieLogo}
-              alt="Birdie Bands Logo"
-              width={200}
-              height={200}
-            /> */}
-            {/* <img className="w-48" src={BirdieLogo} alt="Birdie Bands Logo" /> */}
-            <img
-              className="w-32 pointer !pointer-events-none"
-              src={BirdieLogo}
-              alt="Birdie Bands Logo"
-            />
-            <img
-              className="w-12 rounded-full !pointer-events-none"
-              src={BirdieLogo1}
-              alt="Birdie Bands Logo"
-            />
+            <TrooBrandLockup className="text-4xl" />
           </NavLink>
 
           {/* Navigation Links - Hidden on mobile */}
@@ -107,13 +89,13 @@ const Navbar = () => {
               className={({ isActive }) =>
                 `!bg-transparent hover:!border-transparent ${
                   isActive
-                    ? '!text-green-400 border-b-2 border-black dark:border-white/55 drop-shadow-[0_0_4px_white]'
+                    ? '!text-red-400 border-b-2 border-red-500/70 drop-shadow-[0_0_8px_rgba(229,9,24,0.85)]'
                     : 'text-foreground'
                 }`
               }
               to="/"
             >
-              <li className="text-foreground hover:text-green-400 transition-colors">
+              <li className="text-foreground hover:text-red-300 transition-colors">
                 Home
               </li>
             </NavLink>
@@ -121,13 +103,13 @@ const Navbar = () => {
               className={({ isActive }) =>
                 `!bg-transparent hover:!border-transparent ${
                   isActive
-                    ? '!text-green-400 border-b-2 border-black dark:border-white/55 drop-shadow-[0_0_4px_white]'
+                    ? '!text-red-400 border-b-2 border-red-500/70 drop-shadow-[0_0_8px_rgba(229,9,24,0.85)]'
                     : 'text-foreground'
                 }`
               }
               to="/beats"
             >
-              <li className="text-foreground hover:text-green-400 transition-colors">
+              <li className="text-foreground hover:text-red-300 transition-colors">
                 Beats
               </li>
             </NavLink>
@@ -135,13 +117,13 @@ const Navbar = () => {
               className={({ isActive }) =>
                 `!bg-transparent hover:!border-transparent ${
                   isActive
-                    ? '!text-green-400 border-b-2 border-black dark:border-white/55 drop-shadow-[0_0_4px_white]'
+                    ? '!text-red-400 border-b-2 border-red-500/70 drop-shadow-[0_0_8px_rgba(229,9,24,0.85)]'
                     : 'text-foreground'
                 }`
               }
               to="/packs"
             >
-              <li className="text-foreground hover:text-green-400 transition-colors">
+              <li className="text-foreground hover:text-red-300 transition-colors">
                 Sound Kits
               </li>
             </NavLink> */}
@@ -149,7 +131,7 @@ const Navbar = () => {
               to="/about"
               className="!bg-transparent hover:!border-transparent"
             >
-              <li className="text-foreground hover:text-green-400 transition-colors">
+              <li className="text-foreground hover:text-red-300 transition-colors">
                 About
               </li>
             </NavLink> */}
@@ -158,12 +140,12 @@ const Navbar = () => {
               className={({ isActive }) =>
                 `!bg-transparent hover:!border-transparent ${
                   isActive
-                    ? '!text-green-400 border-b-2 border-black dark:border-white/55 drop-shadow-[0_0_4px_white]'
+                    ? '!text-red-400 border-b-2 border-red-500/70 drop-shadow-[0_0_8px_rgba(229,9,24,0.85)]'
                     : 'text-foreground'
                 }`
               }
             >
-              <li className="text-foreground hover:text-green-400 transition-colors">
+              <li className="text-foreground hover:text-red-300 transition-colors">
                 Blog
               </li>
             </NavLink>
@@ -172,12 +154,12 @@ const Navbar = () => {
               className={({ isActive }) =>
                 `!bg-transparent hover:!border-transparent ${
                   isActive
-                    ? '!text-green-400 border-b-2 border-black dark:border-white/55 drop-shadow-[0_0_4px_white]'
+                    ? '!text-red-400 border-b-2 border-red-500/70 drop-shadow-[0_0_8px_rgba(229,9,24,0.85)]'
                     : 'text-foreground'
                 }`
               }
             >
-              <li className="text-foreground hover:text-green-400 transition-colors">
+              <li className="text-foreground hover:text-red-300 transition-colors">
                 Contact
               </li>
             </NavLink>
@@ -193,12 +175,9 @@ const Navbar = () => {
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
                   <Avatar className="h-8 w-8 cursor-pointer">
-                    <AvatarImage
-                      src={BirdieAvatarLogo}
-                      alt={`Birdie Avatar Image`}
-                    />
+                    <AvatarImage alt="Troo avatar" />
                     <AvatarFallback>
-                      {user?.email.charAt(0).toUpperCase()}
+                      <TrooSigil className="!w-8 !min-w-8" />
                     </AvatarFallback>
                   </Avatar>
                 </DropdownMenuTrigger>
@@ -221,11 +200,11 @@ const Navbar = () => {
             {/* Cart */}
             <button
               onClick={() => setIsCartOpen(true)}
-              className="relative text-foreground hover:text-green-400 transition-colors cursor-pointer !bg-transparent focus:!outline-transparent focus:!border-transparent hover:!border-transparent focus-visible:!outline-transparent focus-visible:!border-transparent"
+              className="relative text-foreground hover:text-red-300 transition-colors cursor-pointer !bg-transparent focus:!outline-transparent focus:!border-transparent hover:!border-transparent focus-visible:!outline-transparent focus-visible:!border-transparent"
             >
               <ShoppingCart className="w-6 h-6" />
               {totalItems > 0 && (
-                <span className="absolute -top-2 -right-2 bg-green-500 text-black text-xs rounded-full w-5 h-5 flex items-center justify-center font-bold">
+                <span className="absolute -top-2 -right-2 bg-red-600 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center font-bold">
                   {totalItems}
                 </span>
               )}
@@ -236,7 +215,7 @@ const Navbar = () => {
               <SheetTrigger asChild>
                 <button
                   onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                  className="lg:hidden text-foreground hover:text-green-400 transition-colors !bg-transparent focus:!outline-none focus:!border-none hover:!border-none focus-visible:!outline-transparent focus-visible:!border-transparent !outline-none !border-none"
+                  className="lg:hidden text-foreground hover:text-red-300 transition-colors !bg-transparent focus:!outline-none focus:!border-none hover:!border-none focus-visible:!outline-transparent focus-visible:!border-transparent !outline-none !border-none"
                 >
                   {isMobileMenuOpen ? (
                     <X className="hidden w-6 h-6 !outline-transparent focus:!outline-transparent" />
@@ -245,14 +224,14 @@ const Navbar = () => {
                   )}
                 </button>
               </SheetTrigger>
-              <SheetContent className="bg-background/90 dark:bg-black/90 border-l border-foreground/30 z-[600]">
+              <SheetContent className="bg-background/95 dark:bg-[#090102]/95 border-l border-red-200/15 z-[600]">
                 <div className="flex flex-col items-center h-full justify-center space-y-4 pt-4 list-none">
                   <NavLink
                     to="/"
                     onClick={() => setIsMobileMenuOpen(false)}
                     className="!bg-transparent hover:!border-transparent"
                   >
-                    <li className="text-foreground hover:text-green-400 transition-colors text-lg">
+                    <li className="text-foreground hover:text-red-300 transition-colors text-lg">
                       Home
                     </li>
                   </NavLink>
@@ -261,7 +240,7 @@ const Navbar = () => {
                     onClick={() => setIsMobileMenuOpen(false)}
                     className="!bg-transparent hover:!border-transparent"
                   >
-                    <li className="text-foreground hover:text-green-400 transition-colors text-lg">
+                    <li className="text-foreground hover:text-red-300 transition-colors text-lg">
                       Beats
                     </li>
                   </NavLink>
@@ -270,7 +249,7 @@ const Navbar = () => {
                     onClick={() => setIsMobileMenuOpen(false)}
                     className="!bg-transparent hover:!border-transparent"
                   >
-                    <li className="text-foreground hover:text-green-400 transition-colors text-lg">
+                    <li className="text-foreground hover:text-red-300 transition-colors text-lg">
                       Blog
                     </li>
                   </NavLink>
@@ -279,7 +258,7 @@ const Navbar = () => {
                     onClick={() => setIsMobileMenuOpen(false)}
                     className="!bg-transparent hover:!border-transparent"
                   >
-                    <li className="text-foreground hover:text-green-400 transition-colors text-lg">
+                    <li className="text-foreground hover:text-red-300 transition-colors text-lg">
                       Contact
                     </li>
                   </NavLink>
@@ -289,7 +268,7 @@ const Navbar = () => {
                       onClick={() => setIsMobileMenuOpen(false)}
                       className="!bg-transparent hover:!border-transparent"
                     >
-                      <li className="text-foreground hover:text-green-400 transition-colors text-lg">
+                      <li className="text-foreground hover:text-red-300 transition-colors text-lg">
                         Dashboard
                       </li>
                     </NavLink>
@@ -303,7 +282,7 @@ const Navbar = () => {
                       }}
                       className="!bg-transparent hover:!border-transparent"
                     >
-                      <li className="text-foreground hover:text-green-400 transition-colors text-lg">
+                      <li className="text-foreground hover:text-red-300 transition-colors text-lg">
                         Logout
                       </li>
                     </NavLink>
@@ -323,7 +302,7 @@ const Navbar = () => {
             <input
               type="text"
               placeholder="Search Beat"
-              className="bg-gray-800 text-white px-4 py-2 pr-10 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400 w-full"
+              className="bg-gray-800 text-white px-4 py-2 pr-10 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-400 w-full"
             />
             <Search className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
           </div>

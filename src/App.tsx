@@ -71,16 +71,16 @@ function AppContent() {
   }, [theme, isDarkMode]);
 
   return (
-    <div className="dark:bg-black bg-background relative m-auto w-full">
-      <div className="fixed h-full w-full top-0 left-0 z-0">
+    <div className="troo-page-shell dark:bg-black bg-background relative m-auto w-full min-h-screen">
+      <div className="fixed h-full w-full top-0 left-0 z-0 opacity-40">
         {isDarkMode && (
           <Galaxy
             mouseRepulsion={true}
             mouseInteraction={false}
-            density={2.4}
-            glowIntensity={0.1}
-            saturation={1}
-            hueShift={140}
+            density={1.35}
+            glowIntensity={0.05}
+            saturation={0.7}
+            hueShift={330}
             rotationSpeed={0}
             starSpeed={0.1}
             speed={1}

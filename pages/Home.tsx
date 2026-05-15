@@ -3,7 +3,6 @@ import FAQS from '@/components/FAQS';
 import Licenses from '@/components/Licenses';
 import TrackListing from '@/components/track-listing';
 import { MoveUp } from 'lucide-react';
-import BirdieLogo from '../src/Images/cropped.png';
 // import Particles from '@/components/ui/ReactBits/Particles';
 // import Background from '@/components/Background';
 import { Helmet } from 'react-helmet'; // Import React Helmet for SEO
@@ -12,7 +11,7 @@ import YoutubeSection from '@/components/YouTube';
 import MailerLitePopUp from '../src/components/MailerLitePopup';
 // import PackList from '@/components/PackList';
 const Home = ({ size }: { size: string }) => {
-  // document.title = `Birdie Bands | Home`;
+  // document.title = `Troo! | Home`;
   const [showButton, setShowButton] = useState(false);
 
   useEffect(() => {
@@ -39,12 +38,12 @@ const Home = ({ size }: { size: string }) => {
   // SEO metadata
   const baseUrl = window.location.origin;
   const canonicalUrl = `${baseUrl}/`;
-  const title = 'Birdie Bands | High-Quality Type Beats & Instrumentals';
+  const title = 'Troo! | Type Beats, Instrumentals & YouTube Beat Drops';
   const description =
-    'Discover high-quality type beats and instrumentals for music production at Birdie Bands. Download beats, explore licenses, and create your next hit!';
+    'Shop Troo! type beats and instrumentals with red-room energy, melodic loops, hard drums, instant downloads, and flexible licensing for artists.';
   const keywords =
-    'type beats, instrumentals, music production, hip hop beats, trap beats, rap beats, beat download, Birdie Bands, gfunk beats, gfunk type beats, g-funk type beats, g-funk type beat, memphis type beats';
-  const imageUrl = BirdieLogo; // Use absolute URL if possible
+    'Troo beats, type beats, instrumentals, music production, hip hop beats, trap beats, rap beats, beat download, youtube beats, melodic type beats';
+  const imageUrl = `${baseUrl}/troo-og.svg`;
   return (
     <div className="overflow-x-hidden flex flex-col gap-64 relative">
       {/* React Helmet for SEO */}
@@ -60,7 +59,7 @@ const Home = ({ size }: { size: string }) => {
         <meta property="og:image" content={imageUrl} />
         <meta property="og:url" content={canonicalUrl} />
         <meta property="og:type" content="website" />
-        <meta property="og:site_name" content="Birdie Bands" />
+        <meta property="og:site_name" content="Troo!" />
 
         {/* Twitter Card for X */}
         <meta name="twitter:card" content="summary_large_image" />
@@ -74,11 +73,11 @@ const Home = ({ size }: { size: string }) => {
             '@context': 'https://schema.org',
             '@type': 'WebSite',
             url: canonicalUrl,
-            name: 'Birdie Bands',
+            name: 'Troo!',
             description: description,
             publisher: {
               '@type': 'Organization',
-              name: 'Birdie Bands',
+              name: 'Troo!',
               logo: {
                 '@type': 'ImageObject',
                 url: imageUrl,

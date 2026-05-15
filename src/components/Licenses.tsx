@@ -23,7 +23,7 @@ const Licenses = () => {
     return (
       <>
         <div className="flex flex-col gap-12 py-12">
-          <h2 className="font-bold text-2xl">Licensing Info</h2>
+          <h2 className="font-black text-2xl">Troo! Licensing</h2>
           <div className="max-w-lg md:max-w-6xl mx-auto px-8">
             <p className="text-red-500">{error}</p>
           </div>
@@ -34,7 +34,7 @@ const Licenses = () => {
   return (
     <>
       <div className="flex flex-col gap-12 py-12">
-        <h2 className="font-bold text-2xl">Licensing Info</h2>
+        <h2 className="font-black text-2xl">Troo! Licensing</h2>
         <div className="max-w-lg md:max-w-6xl mx-auto px-8">
           <HoverEffect
             items={useProjects() as Project[]}

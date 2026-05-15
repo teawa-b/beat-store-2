@@ -17,7 +17,7 @@ export const ThemeToggle = () => {
         <Button
           variant="outline"
           size="icon"
-          className="text-foreground hover:text-green-400 transition-colors !bg-transparent focus:!outline-transparent focus:!border-transparent hover:!border-transparent focus-visible:!outline-transparent focus-visible:!border-transparent !ring-0 !shadow-none"
+          className="text-foreground hover:text-red-300 transition-colors !bg-transparent focus:!outline-transparent focus:!border-transparent hover:!border-transparent focus-visible:!outline-transparent focus-visible:!border-transparent !ring-0 !shadow-none"
         >
           {theme === 'light' ? (
             <Sun className="w-6 h-6" />
@@ -31,25 +31,25 @@ export const ThemeToggle = () => {
       </DropdownMenuTrigger>
       <DropdownMenuContent
         align="end"
-        className="bg-background dark:bg-black/70 border-foreground/30 z-[700]"
+        className="bg-background dark:bg-[#090102]/90 border-red-200/15 z-[700]"
       >
         <DropdownMenuItem
           onClick={() => setTheme('light')}
-          className="text-foreground hover:text-green-400"
+          className="text-foreground hover:text-red-300"
         >
           <Sun className="mr-2 h-4 w-4" />
           Light
         </DropdownMenuItem>
         <DropdownMenuItem
           onClick={() => setTheme('dark')}
-          className="text-foreground hover:text-green-400"
+          className="text-foreground hover:text-red-300"
         >
           <Moon className="mr-2 h-4 w-4" />
           Dark
         </DropdownMenuItem>
         <DropdownMenuItem
           onClick={() => setTheme('system')}
-          className="text-foreground hover:text-green-400"
+          className="text-foreground hover:text-red-300"
         >
           <Laptop className="mr-2 h-4 w-4" />
           System
