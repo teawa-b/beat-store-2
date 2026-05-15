@@ -175,7 +175,7 @@ const Navbar = () => {
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
                   <Avatar className="h-8 w-8 cursor-pointer">
-                    <AvatarImage alt="Troo avatar" />
+                    <AvatarImage src="/channels4_profile.jpg" alt="Troo avatar" />
                     <AvatarFallback>
                       <TrooSigil className="!w-8 !min-w-8" />
                     </AvatarFallback>

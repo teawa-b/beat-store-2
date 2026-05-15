@@ -2,13 +2,16 @@
 import { motion } from 'framer-motion';
 import TiltedCard from './ui/ReactBits/TitledCard';
 import { useNavigate } from 'react-router-dom';
-import Gunna from '../../src/Images/artist/gunna1.gif';
-import Larry from '../../src/Images/artist/june.gif';
-import KeyGlock from '../../src/Images/artist/key.gif';
+
+// Use URL references instead of static imports to avoid bundling ~15MB of GIFs
+const Gunna = new URL('../../src/Images/artist/gunna1.gif', import.meta.url).href;
+const Larry = new URL('../../src/Images/artist/june.gif', import.meta.url).href;
+const KeyGlock = new URL('../../src/Images/artist/key.gif', import.meta.url).href;
+
 const Artists = ({ size }: { size: string }) => {
   const navigate = useNavigate();
   const handleCardClick = (term: string) => {
-    navigate(`/beats?search=${encodeURIComponent(term)}`); // Navigates to the '/dashboard' route
+    navigate(`/beats?search=${encodeURIComponent(term)}`);
   };
   return (
     <>
@@ -16,6 +19,7 @@ const Artists = ({ size }: { size: string }) => {
         initial={{ y: 100, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.3, ease: [0, 0.71, 0.2, 1.01] }}
+        viewport={{ once: true }}
         className="flex flex-col gap-12 px-4"
       >
         <div>
@@ -27,8 +31,6 @@ const Artists = ({ size }: { size: string }) => {
         <div className="flex gap-24 flex-wrap justify-center z-10">
           <div onClick={() => handleCardClick('Key Glock')}>
             <TiltedCard
-              // imageSrc="https://i.pinimg.com/736x/a2/3b/a7/a23ba7a9cdb5d504d7e847f6bcbada7b.jpg"
-              // imageSrc="https://archive.illroots.com/uploads/articles/48213/image/1528414779/search_results.gif?1528416975"
               imageSrc={KeyGlock}
               altText="Key Glock Type Beats"
               captionText="Key Glock Type Beats"
@@ -50,7 +52,6 @@ const Artists = ({ size }: { size: string }) => {
           </div>
           <div onClick={() => handleCardClick('Larry June')}>
             <TiltedCard
-              // imageSrc="https://i.pinimg.com/736x/d4/bd/5c/d4bd5cc9eefe2ca4859d21345429bc90.jpg"
               imageSrc={Larry}
               altText="Larry June Type Beats"
               captionText="Larry June Type Beats"
@@ -73,7 +74,6 @@ const Artists = ({ size }: { size: string }) => {
 
           <div onClick={() => handleCardClick('Gunna')}>
             <TiltedCard
-              // imageSrc="https://i.pinimg.com/736x/7f/05/ae/7f05ae439f3695ca4626c2d104d48e67.jpg"
               imageSrc={Gunna}
               altText="Gunna Type Beats"
               captionText="Gunna Type Beats"

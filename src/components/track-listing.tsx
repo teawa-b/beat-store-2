@@ -16,7 +16,6 @@ import {
 } from 'lucide-react';
 import { NavLink, useNavigate } from 'react-router';
 import { usePlayer } from '@/contexts/PlayerContext';
-import StudioVideo from '/Videos/music-studio.mp4';
 import { motion } from 'framer-motion';
 import { useSearchParams } from 'react-router-dom';
 import { useCart } from '@/contexts/cart-context';
@@ -553,8 +552,10 @@ const TrackListing = ({ limitTrackCount }: { limitTrackCount?: number }) => {
           autoPlay
           loop
           muted
+          playsInline
+          preload="none"
           className="hidden md:block !pointer-events-none absolute h-screen lg:h-auto scale-200 md:scale-140 z-0 opacity-[0.08]"
-          src={StudioVideo}
+          src="/Videos/music-studio.mp4"
         ></video>
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(229,9,24,0.32),transparent_28%),radial-gradient(circle_at_80%_20%,rgba(255,93,46,0.14),transparent_24%),linear-gradient(180deg,rgba(0,0,0,0.1),rgba(0,0,0,0.78))]" />
         <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-[#090102] to-transparent" />
